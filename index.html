@@ -1,0 +1,302 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+        <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+        <!-- Good default declaration:
+        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+            * Enable eval(): add 'unsafe-eval' to default-src
+        * Create your own at http://cspisawesome.com
+        -->
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+        <title>SIB</title>
+        <!-- plugin links -->
+        <link rel="stylesheet" type="text/css" href="assets/bower_components/jquery-loading/dist/jquery.loading.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/bower_components/notyf/dist/notyf.min.css">
+        <!-- app links -->
+        <link rel="stylesheet" type="text/css" href="assets/css/core.css" />
+        <link rel="stylesheet" type="text/css" href="assets/css/app.css" />
+    </head>
+    <body>
+        <!-- page 1: splashscreen -->
+        <div class="page" id="page1">
+            <div class="appbody full">
+                <div class="logo">
+                    <img src="assets/images/logosib.png" alt="">
+                    <h5>Société Ivoirienne de Banque</h5>
+                </div>
+            </div>
+        </div>
+
+        <!-- page 2 -->
+        <div class="page pageswithseachfield" id="page2">
+            <!-- app bar -->
+            <div class="appbar">
+                <!-- icons -->
+                <!--<span class="left-icon" onclick="page.previous()"><i class="mdi">wifi_lock</i></span>-->
+                <span class="left-icon"><img src="assets/images/logosib.png" alt="" width="30" height="30"></span>
+                <span class="right-icon">
+                <i class="mdi">more_vert</i>
+                    <!--<ul class="dropmenu" data-toggle="0">
+                       <li onclick="page.to('page6',{/*after: app.listCodes*/})">Version SMS</li>
+                       <li onclick="page.to('page4',{/*after: app.listCodes*/})">Version en ligne</li>
+                        <!--<li>Mettre à jours</li>
+                    </ul>-->
+                    </span>
+                <!-- title-->
+                <span class="bartitle withicon centered">SIB</span>
+            </div>
+            <!-- app body -->
+            <div class="appbody">
+                <div class="slider">
+                    <div class="picture">
+                        <img src="assets/images/01.jpg" alt="">
+                    </div>
+                </div>
+                <div class="menubtns">
+                    <a class="btns squared" onclick="page.to('page6')"><i class="mdi">assignment</i> S'informer</a>
+                    <a class="btns squared" onclick="page.to('page3')"><i class="mdi">event</i> Rendez-vous</a>
+                    <a class="btns squared" onclick="page.to('page7')"><i class="mdi">account_balance</i> Nos agences</a>
+                    <a class="btns squared" onclick="page.to('page5')"><i class="mdi">question_answer</i> Nous écrire</a>
+                </div>
+            </div>
+            <!-- float button -->
+            <!--<button class="appfloatbutton primary" onclick="page.previous()"><i class="mdi">add</i></button>-->
+        </div>
+
+        <!-- page 3 -->
+        <div class="page pageswithseachfield" id="page3">
+            <!-- app bar -->
+            <div class="appbar">
+                <!-- icons -->
+                <span class="left-icon" onclick="window.history.back()"><i class="mdi">arrow_back</i></span>
+                <span class="right-icon">
+                <i class="mdi">more_vert</i>
+                    <!--<ul class="dropmenu" data-toggle="0">
+                       <li onclick="page.to('page6',{/*after: app.listCodes*/})">Version SMS</li>
+                       <li onclick="page.to('page4',{/*after: app.listCodes*/})">Version en ligne</li>
+                        <!--<li>Mettre à jours</li>
+                    </ul>-->
+                    </span>
+                <!-- title-->
+                <span class="bartitle withicon centered">Rendez-vous</span>
+            </div>
+            <!-- app body -->
+            <div class="appbody">
+                <div class="roundlogo">
+                    <img src="assets/images/logosib.png" alt="">
+                </div>
+                <div class="menubtns">
+                    <a class="btns long" onclick="page.to('page4', {after: app.showMeetForm, vars: 'client'})">Je suis client de la banque</a>
+                    <a class="btns long" onclick="page.to('page4', {after: app.showMeetForm, vars: 'no'})">Je ne suis pas client</a>
+                </div>
+            </div>
+            <!-- float button -->
+            <!--<button class="appfloatbutton primary" onclick="page.previous()"><i class="mdi">add</i></button>-->
+        </div>
+
+        <!-- page 4 -->
+        <div class="page pageswithseachfield" id="page4">
+            <!-- app bar -->
+            <div class="appbar">
+                <!-- icons -->
+                <span class="left-icon" onclick="window.history.back()"><i class="mdi">arrow_back</i></span>
+                <span class="right-icon">
+                <i class="mdi">more_vert</i>
+                    <!--<ul class="dropmenu" data-toggle="0">
+                       <li onclick="page.to('page6',{/*after: app.listCodes*/})">Version SMS</li>
+                       <li onclick="page.to('page4',{/*after: app.listCodes*/})">Version en ligne</li>
+                        <!--<li>Mettre à jours</li>
+                    </ul>-->
+                    </span>
+                <!-- title-->
+                <span class="bartitle withicon centered">SIB</span>
+            </div>
+            <!-- app body -->
+            <div class="appbody">
+                <div class="advise">
+                    <img src="assets/images/logosib.png" alt="">
+                    <p>
+                        Remplisez le formulaire suivant pour donner suite à votre requête.
+                    </p>
+                </div>
+                <div class="form">
+                    <form action="" id="meetform">
+                        <div class="group-form client">
+                            <label>Votre code Agence</label>
+                            <input type="text" class="input-field" placeholder="ex: xxx" name="" onkeyup="app.findAgency(this.value)">
+                            <div class="agencecheck">
+                                <b>Votre agence: </b><span class="">Inconnue !</span>
+                            </div>
+                        </div>
+                        <div class="group-form client">
+                            <label>Numero de compte</label>
+                            <input type="text" class="input-field" placeholder="xxx-xxx-xxxx-xx-xxxxx" name="account">
+                        </div>
+                        <div class="group-form no-client">
+                            <label>Nom et prénoms</label>
+                            <input type="text" class="input-field" placeholder="ex: Koffi Paul" name="nom">
+                        </div>
+                        <div class="group-form no-client">
+                            <label>Résidence</label>
+                            <input type="text" class="input-field" placeholder="ex: Abidjan-Yopougon-Niangon" name="domain">
+                        </div>
+                        <div class="group-form">
+                            <label>Votre contact</label>
+                            <input type="text" class="input-field" placeholder="Numero de téléphone" name="phone">
+                        </div>
+                        <div class="group-form">
+                            <label>Votre E-mail</label>
+                            <input type="text" class="input-field" placeholder="ex: moi@sib.ci" name="email">
+                        </div>
+                        <div class="group-form">
+                            <label>Votre préoccupation</label>
+                            <textarea rows="5" class="input-field" placeholder="Qu'est-ce qui vous préoccupe ?" name="problem"></textarea>
+                            <input type="hidden" id="formtype" name="isclient">
+                            <input type="hidden" id="agencycode" name="agency">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- float button -->
+            <button class="appfloatbutton primary" onclick="app.sendMeet()"><i class="mdi">send</i></button>
+        </div>
+
+        <!-- page 5 -->
+        <div class="page pageswithseachfield" id="page5">
+            <!-- app bar -->
+            <div class="appbar">
+                <!-- icons -->
+                <span class="left-icon" onclick="window.history.back()"><i class="mdi">arrow_back</i></span>
+                <span class="right-icon">
+                <i class="mdi">more_vert</i>
+                    <!--<ul class="dropmenu" data-toggle="0">
+                       <li onclick="page.to('page6',{/*after: app.listCodes*/})">Version SMS</li>
+                       <li onclick="page.to('page4',{/*after: app.listCodes*/})">Version en ligne</li>
+                        <!--<li>Mettre à jours</li>
+                    </ul>-->
+                    </span>
+                <!-- title-->
+                <span class="bartitle withicon centered">MESSAGE</span>
+            </div>
+            <!-- app body -->
+            <div class="appbody">
+                <div class="advise">
+                    <img src="assets/images/logosib.png" alt="">
+                    <p>
+                        Remplisez le formulaire suivant pour laisser un message.
+                    </p>
+                </div>
+                <div class="form">
+                    <form action="" id="contactform">
+                        <div class="group-form no-client">
+                            <label>Nom et Prénoms</label>
+                            <input type="text" class="input-field" placeholder="ex: Koffi Paul" name="nom">
+                        </div>
+                        <div class="group-form no-client">
+                            <label>Résidence</label>
+                            <input type="text" class="input-field" placeholder="ex: Abidjan-Yopougon-Niangon" name="domain">
+                        </div>
+                        <div class="group-form">
+                            <label>Votre Contact</label>
+                            <input type="text" class="input-field" placeholder="Numero de téléphone" name="phone">
+                        </div>
+                        <div class="group-form">
+                            <label>Votre E-mail</label>
+                            <input type="text" class="input-field" placeholder="ex: moi@sib.ci" name="email">
+                        </div>
+                        <div class="group-form">
+                            <label>Votre Message</label>
+                            <textarea rows="5" class="input-field" placeholder="Votre message ..." name="message"></textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- float button -->
+            <button class="appfloatbutton primary" onclick="app.sendMessage()"><i class="mdi">send</i></button>
+        </div>
+
+        <!-- page 6 -->
+        <div class="page pageswithseachfield" id="page6">
+            <!-- app bar -->
+            <div class="appbar">
+                <!-- icons -->
+                <span class="left-icon" onclick="window.history.back()"><i class="mdi">arrow_back</i></span>
+                <span class="right-icon">
+                <i class="mdi">more_vert</i>
+                    <!--<ul class="dropmenu" data-toggle="0">
+                       <li onclick="page.to('page6',{/*after: app.listCodes*/})">Version SMS</li>
+                       <li onclick="page.to('page4',{/*after: app.listCodes*/})">Version en ligne</li>
+                        <!--<li>Mettre à jours</li>
+                    </ul>-->
+                    </span>
+                <!-- title-->
+                <span class="bartitle withicon centered">Infos</span>
+            </div>
+            <!-- app body -->
+            <div class="appbody">
+                <div class="applist">
+                    <!-- infos list template -->
+                </div>
+            </div>
+        </div>
+
+        <!-- page 7 -->
+        <div class="page pageswithseachfield" id="page7">
+            <!-- app bar -->
+            <div class="appbar">
+                <!-- icons -->
+                <span class="left-icon" onclick="window.history.back()"><i class="mdi">arrow_back</i></span>
+                <span class="right-icon">
+                <i class="mdi">more_vert</i>
+                    <!--<ul class="dropmenu" data-toggle="0">
+                       <li onclick="page.to('page6',{/*after: app.listCodes*/})">Version SMS</li>
+                       <li onclick="page.to('page4',{/*after: app.listCodes*/})">Version en ligne</li>
+                        <!--<li>Mettre à jours</li>
+                    </ul>-->
+                    </span>
+                <!-- title-->
+                <span class="bartitle withicon centered">Nos Agences</span>
+            </div>
+            <!-- app body -->
+            <div class="appbody">
+                <div class="applist">
+                    <!-- Agencies list -->
+                </div>
+            </div>
+        </div>
+
+        <!-- loader -->
+
+        <div id="loader">
+            <div class="loader-content">
+                <svg class="spinner" width="65px" height="65px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                    <circle class="path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="25"></circle>
+                </svg>
+                <h5 class="loader-message">Loading ...</h5>
+            </div>
+        </div>
+
+        <!-- plugin scripts -->
+        <script type="text/javascript" src="assets/js/jquery.js"></script>
+        <script type="text/javascript" src="assets/bower_components/jquery-loading/dist/jquery.loading.min.js"></script>
+        <script type="text/javascript" src="assets/bower_components/notyf/dist/notyf.min.js"></script>
+        <script type="text/javascript" src="assets/bower_components/ejs/ejs.min.js"></script>
+        <!-- app scripts -->
+        <script type="text/javascript" src="assets/js/extensions.js"></script>
+        <script type="text/javascript" src="assets/js/core.js"></script>
+        <script type="text/javascript" src="assets/js/index.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                app.initialize();
+            });
+        </script>
+    </body>
+</html>

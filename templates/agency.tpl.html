@@ -1,0 +1,26 @@
+<ul>
+    <% for (var a in o) { %>
+    <li>
+        <div class="header" onclick="app.toggleInfos(this)">
+            <div class="icon">
+                <i class="mdi">account_balance</i>
+            </div>
+            <div class="infos">
+                <span class="prinicpal"><%= o[a].nom %></span>
+                <p class="secondar">
+                    <%= o[a].commune %>
+                </p>
+            </div>
+        </div>
+        <div class="content">
+            <img src="http://news.abidjan.net/photos/photos/INAUGURATION-AGENCE-SIB-MARCORY-SQUARE-CENTER-0000.jpg" alt="" />
+            <p>
+                <%= o[a].description %>
+            </p>
+            <div class="button" style="text-align: right;">
+                <a href="#page2" class="app-btn">S'y rendre</a>
+            </div>
+        </div>
+    </li>
+    <% } %>
+</ul>

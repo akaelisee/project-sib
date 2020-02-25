@@ -1,0 +1,20 @@
+<ul>
+    <% for (var a in o) { %>
+    <li>
+        <div class="header" onclick="app.toggleInfos(this)">
+            <div class="icon">
+                <i class="mdi">infos</i>
+            </div>
+            <div class="infos">
+                <span class="prinicpal"><%= o[a].title %></span>
+                <p class="secondar">
+                    <%= o[a].date %>
+                </p>
+            </div>
+        </div>
+        <div class="content">
+            <p><%= o[a].content %></p>
+        </div>
+    </li>
+    <% } %>
+</ul>
